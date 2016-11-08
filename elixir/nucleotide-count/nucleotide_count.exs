@@ -27,11 +27,6 @@ defmodule NucleotideCount do
   """
   @spec histogram([char]) :: map
   def histogram(strand) do
-    # there should be a better way
-    map = Map.new()
-    map = Map.put(map, ?A, count(strand, ?A))
-    map = Map.put(map, ?T, count(strand, ?T))
-    map = Map.put(map, ?C, count(strand, ?C))
-    map = Map.put(map, ?G, count(strand, ?G))
+    Map.new(@nucleotides, fn(x)-> {x, count(strand, x)} end)
   end
 end
