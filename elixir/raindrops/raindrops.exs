@@ -11,9 +11,9 @@ defmodule Raindrops do
   @spec convert(pos_integer) :: String.t
   def convert(number) do
     result = ""
-    result = result <> if rem(number,3) == 0 do "Pling" else "" end
-    result = result <> if rem(number,5) == 0 do "Plang" else "" end
-    result = result <> if rem(number,7) == 0 do "Plong" else "" end
+      <> if rem(number,3) == 0 do "Pling" else "" end
+      <> if rem(number,5) == 0 do "Plang" else "" end
+      <> if rem(number,7) == 0 do "Plong" else "" end
     if(result == "") do Integer.to_string(number) else result end
   end
 end
